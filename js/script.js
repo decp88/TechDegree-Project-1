@@ -7,7 +7,7 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 var quote;
 var author;
 var yearWrote;
-
+var citation;
 
 
 function getRandomQuote() {
@@ -23,19 +23,31 @@ function printQuote () {
     quote = pickedQuote.quote;
     author = pickedQuote.author;
     yearWrote = pickedQuote.year;
+    citation = pickedQuote.citation
     
     
-    document.getElementById('quote').innerHTML = quote;
-    document.getElementById('source').innerHTML = author;
-    document.getElementById('year').innerHTML = yearWrote;
-}
+    var constructCiting = author;
     
-    /*if(year !== "0") {
-        
+    if(citation != 1) {
+        constructCiting = author;
+        constructCiting += "<span class='citation'>" + citation + "</span>";
+    }
+    
+    if (yearWrote === 1) {
+        constructCiting;
     }
     else {
-        document.getElementById('year').innerHTML = "year not known";
-    }*/
+        constructCiting;
+        constructCiting += "<span id='year'>" + yearWrote + "</span>";
+    }
+    
+    
+    document.getElementById('source').innerHTML = constructCiting;
+    document.getElementById('quote').innerHTML = quote;
+
+}
+
+
     
 
 
