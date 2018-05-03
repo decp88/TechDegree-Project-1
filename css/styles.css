@@ -52,7 +52,7 @@ body {
   content: ", ";
   font-style: normal;
 }
-.year:before {
+#year:before {
   content: ", ";
   font-style: normal;
 }
