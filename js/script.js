@@ -17,7 +17,7 @@ setInterval(printQuote, 12000);
 //Select random quote
 
 function getRandomQuote() {
-    var randomNum = Math.round(Math.random() * 4 +1);
+    var randomNum = Math.round(Math.random() * quotes.length);
     var selectedRandomQuote = quotes[randomNum];
     
     return selectedRandomQuote;
@@ -30,26 +30,23 @@ function printQuote () {
     var pickedQuote = getRandomQuote();
     quote = pickedQuote.quote;
     author = pickedQuote.author;
-    yearWrote = pickedQuote.year;
-    citation = pickedQuote.citation;
-    tag = pickedQuote.tag;
+
     
-    
-    
+//Construct string beneath quote
     var constructCiting = author;
     
-    if(citation) {
+    if(pickedQuote.citation) {
         constructCiting = author;
-        constructCiting += "<span class='citation'>" + citation + "</span>";
+        constructCiting += "<span class='citation'>" + pickedQuote.citation + "</span>";
     }
     
-    if (yearWrote) {
+    if (pickedQuote.year) {
         constructCiting;
-        constructCiting += "<span id='year'>" + yearWrote + "</span>";
+        constructCiting += "<span id='year'>" + pickedQuote.year + "</span>";
     }
     
-    if (tag) {
-        document.getElementById("tag").innerHTML = tag;
+    if (pickedQuote.tag) {
+        document.getElementById("tag").innerHTML = pickedQuote.tag;
     }
  
     
