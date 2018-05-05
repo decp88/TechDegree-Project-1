@@ -38,17 +38,17 @@ function printQuote () {
     
     var constructCiting = author;
     
-    if(citation !== 1) {
+    if(citation) {
         constructCiting = author;
         constructCiting += "<span class='citation'>" + citation + "</span>";
     }
     
-    if (yearWrote !== 1) {
+    if (yearWrote) {
         constructCiting;
         constructCiting += "<span id='year'>" + yearWrote + "</span>";
     }
     
-    if (tag !== 1) {
+    if (tag) {
         document.getElementById("tag").innerHTML = tag;
     }
  
