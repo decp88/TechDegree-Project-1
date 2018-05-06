@@ -5,7 +5,7 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 
 // Variables
 var quote;
-var author;
+var source;
 var yearWrote;
 var citation;
 var tag;
@@ -17,7 +17,7 @@ setInterval(printQuote, 12000);
 //Select random quote
 
 function getRandomQuote() {
-    var randomNum = Math.round(Math.random() * quotes.length);
+    var randomNum = Math.floor(Math.random() * 5) + 1;
     var selectedRandomQuote = quotes[randomNum];
     
     return selectedRandomQuote;
@@ -28,31 +28,31 @@ function getRandomQuote() {
 
 function printQuote () {
     var pickedQuote = getRandomQuote();
-    quote = pickedQuote.quote;
-    author = pickedQuote.author;
 
     
 //Construct string beneath quote
-    var constructCiting = author;
+    var constructEverything = '';
+    
+    constructEverything += '<p class="quote">' + pickedQuote.quote + '</p>';
+    constructEverything += '<p class="source">' + pickedQuote.source;
+    
     
     if(pickedQuote.citation) {
-        constructCiting = author;
-        constructCiting += "<span class='citation'>" + pickedQuote.citation + "</span>";
+        constructEverything += '<span class="citation">' + pickedQuote.citation + '</span>';
     }
     
     if (pickedQuote.year) {
-        constructCiting;
-        constructCiting += "<span id='year'>" + pickedQuote.year + "</span>";
+        constructEverything += '<span class="year">' + pickedQuote.year + '</span>';
     }
     
     if (pickedQuote.tag) {
-        document.getElementById("tag").innerHTML = pickedQuote.tag;
+        constructEverything += '<span class="tag">' + pickedQuote.tag + '</span>';
     }
- 
     
-    document.getElementById('source').innerHTML = constructCiting;
-    document.getElementById('quote').innerHTML = quote;
-    document.getElementById('quote-box').style.background = randomRGB();
+    constructEverything += '</p>'
+ 
+    document.getElementById('quote-box').innerHTML = constructEverything;
+    document.body.style.backgroundColor = randomRGB();
 
 }
 
@@ -71,7 +71,7 @@ function randomRGB() {
 }
 
 function randomColor(num) {
-  var randomNumber = Math.round(Math.random() * num);
+  var randomNumber = Math.floor(Math.random() * num);
   return randomNumber;
 }
 

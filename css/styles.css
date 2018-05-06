@@ -1,6 +1,6 @@
 body {
   /*text-align: center;*/
-  background-color: #36b55c;
+  background-color: blue;
   color: white;
   font-family: 'Playfair Display', serif;
 }
@@ -11,63 +11,66 @@ body {
   right: 10%;
   width: 80%;
   line-height: .5;
-  border-radius: 25px;
-  
 }
-#quote {
+.quote {
   font-size: 4rem;
   font-weight: 400;
   line-height: 1.1;
   position: relative;
   margin: 0;
-  padding-left: 50px;
-  padding-right: 50px;
   } 
-#quote:before, .quote:after {
+.quote:before, .quote:after {
   font-size: 6rem;
   line-height: 2.5rem;
   position: absolute;
 }
-#quote:before {
+.quote:before {
   content: "“";
-  top: .1em;
-  left: 0.1em;
+  top: .25em;
+  left: -.5em;
 }
-#quote:after {
+.quote:after {
   content: "”";
   bottom: -.1em;
   margin-left: .1em;
   position: absolute;
 }
-#source {
+.source {
   font-size: 1.25rem;;
   letter-spacing: 0.05em;
   line-height: 1.1;
   text-align: right;
   margin-right: 4em;
 }
-#source:before {
+.source:before {
   content: "—";
 }
 .citation {
+  font-style: italic;
+}
+.tag {
   font-style: italic;
 }
 .citation:before {
   content: ", ";
   font-style: normal;
 }
-#year:before {
+.year:before {
   content: ", ";
   font-style: normal;
 }
+.tag:before {
+  content: ", ";
+  font-style: normal;
+}  
 
 #loadQuote {
-  position:fixed;
+  position: fixed;
   width: 12em;
   display: inline-block;
   left: 50%;
   margin-left: -6em;
-  bottom: 90px;
+  bottom: 150px;
   border-radius: 4px;
   border: 2px solid #fff;
   color: #fff;
@@ -94,18 +97,3 @@ body {
   }
 }
 
-#tag {
-    text-align: center;
-    letter-spacing: 3px;
-    border-bottom: solid white 0.5px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    font-size: 1.4em;
-    
-}
-
-#tag::first-letter {
-    font-size: 1.9em;
-    
-    
-}
